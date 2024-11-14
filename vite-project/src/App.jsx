@@ -1,9 +1,12 @@
+import Head from "./Head"
+import TopOfferDiv from "./Top"
 
 function App() {
 
   return (
-    <div className=''>
-      ok
+    <div>
+      <TopOfferDiv />
+      <Head />
     </div>
   )
 }
