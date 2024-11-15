@@ -5,7 +5,7 @@ import TopOfferDiv from "./Top"
 function App() {
 
   return (
-    <div className="overflow-hidden mb-40 bg-[#FFF6F2]">
+    <div className="overflow-hidden mb-10 bg-[#FFF6F2]">
       <TopOfferDiv />
       <Header />
       <Center />

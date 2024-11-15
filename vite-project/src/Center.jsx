@@ -1,5 +1,14 @@
 import React from "react";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaFacebook } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
+const socialmedialinks = [
+  {name : "instagram" , url : "https://www.instagram.com/zarqaa.in?igsh=ZDZodGJ0aXIybjgx" , icon : <RiInstagramFill />},
+  {name : "facebook" , url : "" , icon : <FaFacebook />},
+  {name : "youtube" , url : "" , icon : <FaYoutube />},
+]
 function Center() {
   return (
     <div>
@@ -131,6 +140,31 @@ function Center() {
           With products made the Zarqaa way, we are building a brighter future one face at a time. Zarqaa is <br />pioneering the biotech-born, vegan beauty movement, bringing individuals of all skin types a line of quality <br /> skin care products for youthful, glowing skin. Complete with a variety of oils, toners, serums, moisturizers, and <br /> more, each vegan skin care product in our collection is packed with innovative, high performing ingredients. <br /> Explore what sets Zarqaa apart.
           </p>
         </div>
+
+        <div className="flex justify-between items-center px-40 mt-14 bg-white ">
+          <div className="flex items-center text-sm font-semibold gap-4">
+          <MdOutlineMailOutline className="text-2xl" />
+          <p className="text-gray-600">SIGN UP FOR EMAILS , <br /> GET 20% EXTRA OFF ON YOUR FIRST ORDER</p>
+          <button className="mt-6 px-6 font-semibold py-3 rounded-md bg-[#8D6E43]
+        text-white hover:bg-[#B08750]">SIGN IN</button>
+          </div>
+          <div className="flex items-center gap-4 text-gray-600 font-semibold">
+            <h1>CONNECT WITH US</h1>
+            <div className="flex gap-2 text-2xl text-black">
+            {
+              socialmedialinks.map((item,index)=>(
+                <a href={item.url}>
+                {item.icon}
+                </a>
+              ))
+            }
+            </div>
+          </div>
+        </div>
+
+        <div>
+        </div>
+
       </div>
     </div>
   );
