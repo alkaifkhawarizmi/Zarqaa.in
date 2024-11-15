@@ -1,12 +1,14 @@
-import Head from "./Head"
+import Center from "./Center"
+import Header from "./Header"
 import TopOfferDiv from "./Top"
 
 function App() {
 
   return (
-    <div>
+    <div className="overflow-hidden mb-40 bg-[#FFF6F2]">
       <TopOfferDiv />
-      <Head />
+      <Header />
+      <Center />
     </div>
   )
 }

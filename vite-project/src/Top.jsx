@@ -15,7 +15,7 @@ function TopOfferDiv() {
       <h1>Clean Crew Rewards</h1>
       </div>
     </div>
-    <div className="text-sm cursor-pointer font-normal flex items-center justify-center p-3 border-b-2 border-gray-250 text-gray-700 hover:bg-red-50 hover:border-y hover:border-black">
+    <div className="text-sm bg-white cursor-pointer font-normal flex items-center justify-center p-3 border-b-2 border-gray-250 text-gray-700 hover:bg-red-50 hover:border-y hover:border-black">
       <h1>FREE GIFT OF CHOICE ON ORDER ₹1000+ | SHOP NOW</h1>
     </div>
     </div>
