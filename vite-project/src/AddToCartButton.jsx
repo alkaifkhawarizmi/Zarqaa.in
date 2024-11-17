@@ -14,10 +14,10 @@ const AddToCartButton = () => {
 
   return (
     <button
-      className={`px-6 py-3 text-white font-semibold text-lg rounded-full transition-all duration-300 transform ${
+      className={`px-6 py-3 text-white font-semibold text-lg rounded-md transition-all duration-300 transform ${
         clicked
-          ? 'scale-110 rotate-12 bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg'
-          : 'scale-100 rotate-0 bg-blue-500'
+          ? 'scale-105 bg-gradient-to-r from-blue-500 to-indigo-600 shadow-md'
+          : 'bg-blue-500'
       } hover:bg-blue-600 active:scale-95 focus:outline-none`}
       onClick={handleClick}
     >
