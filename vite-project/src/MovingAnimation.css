@@ -1,0 +1,26 @@
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  animation: slide 30s linear infinite;
+}
+
+.slide {
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-66.6%);
+  }
+} 
