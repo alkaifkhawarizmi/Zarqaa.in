@@ -10,10 +10,11 @@ function App() {
   return (
     <div className="overflow-hidden">
       <Nav />
-      <MovingAnimation /> 
+      <Carousel data={slides} />
+      {/* <MovingAnimation />  */}
       <Product />
       <Footer/>
-      <Carousel data={slides} />
+      
     </div>
   )
 }
