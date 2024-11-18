@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IoMdStar } from "react-icons/io";
 import PlaceOrder from "./PlaceOrder";
 import { MdDeleteOutline } from "react-icons/md";
-import { removeCart } from "./CartDataSlice";
+import { clearCart, removeCart } from "./CartDataSlice";
 
 function Cart() {
   
@@ -11,8 +11,13 @@ function Cart() {
 
   const dispatch = useDispatch()
 
-  function handleRemoveCart(){
-    dispatch(removeCart())
+  function handleRemoveCart(i){
+    dispatch(removeCart(i))
+  }
+
+  function handleclearCart(){
+    console.log("Clearing Cart")
+    dispatch(clearCart())
   }
 
   const hasItems = Cartdata?.items?.length > 0;
@@ -23,13 +28,10 @@ function Cart() {
 
   let totalPrice = 0
 
-  let totalDiscount
-
   for (let i = 0; i < Cartdata.items.length; i++) {
-    totalPrice += Cartdata.items[i].productData.price
+   totalPrice += Cartdata.items[i].productData.price  
   }
 
-  console.log(totalPrice)
 
   return (
     <div className="pt-36 px-32 relative">
@@ -105,7 +107,7 @@ function Cart() {
                   <span className="w-10 h-[1px] ml-12 bg-gray-600 absolute top-1/2"></span>
                 </div>
               </div>
-              <MdDeleteOutline onClick={handleRemoveCart} className="text-5xl cursor-pointer mt-8 text-red-600" />
+              <MdDeleteOutline onClick={()=>handleRemoveCart(index)} className="text-5xl cursor-pointer mt-8 text-red-600" />
               </div>
             </div>
           </div>
@@ -119,33 +121,37 @@ function Cart() {
 
       {
         hasItems && productData ? 
-        <div className="fixed border-2 shadow-xl px-6 py-4 right-16 top-48">
-            <h1 className="text-xl font-semibold text-green-600">Special Price</h1>
-            <div className="flex items-center mt-1 gap-2">
-              <h1 className="text-2xl font-semibold">
-                ₹
-                {100}
-                /-
-              </h1>
-              <h2 className="text-red-500 text-xl font-semibold">
-                {10}% Off
-              </h2>
-              <div className="relative">
-                <h1 className="text-gray-400">M.R.P : ₹{85}</h1>
-                <span className="w-10 h-[1px] ml-12 bg-gray-600 absolute top-1/2"></span>
-              </div>
+        <div className="fixed border-2 shadow-xl w-[400px] px-6   py-4 right-20 top-48">
+            <h1 className="text-xl font-semibold text-green-600">Price Summary</h1>
+            <div className="flex mt-2 text-lg font-semibold text-gray-600 justify-between"> 
+            <h1>Order Total : </h1>
+            <h1>₹{totalPrice}/-</h1>
             </div>
-            <h1 className="text-gray-500">(inclusive of all taxes)</h1>
-            <div className="flex text-lg mt-2 items-center ">
-              {5}
-              <IoMdStar className="ml-1 text-yellow-400" />
-              <h1 className="ml-3 text-base font-medium text-blue-500">
-                {555} Reviews
-              </h1>
+            <div className="flex mt-2 text-lg font-semibold text-gray-600 justify-between"> 
+            <h1>Items Discount : </h1>
+            <h1 className="text-green-600">₹{totalPrice}/-</h1>
             </div>
-            <h1 className="text-xl font-semibold text-gray-500">Single</h1>
+            <div className="flex mt-2 text-lg font-semibold text-gray-600 justify-between"> 
+            <h1>Shipping : </h1>
+            <h1 className="text-green-600">Free</h1>
+            </div>
+            <div className="flex mt-2 text-lg font-semibold text-gray-600 justify-between"> 
+            <h1>5% Online Payment Discount : </h1>
+            <h1 className="text-green-600">₹{((5/100)*totalPrice).toFixed(2)}/-</h1>
+            </div>
+            <div className="flex mt-2 text-xl font-semibold  justify-between"> 
+            <h1>To Pay : </h1>
+            <h1>₹578/-</h1>
+            </div>
+            <h1 className="mt-4 text-base">Congratulations you are saving <span className="text-green-800 font-medium">₹100</span> on this order </h1>
             <div className="flex items-center justify-between">
             <PlaceOrder />
+            
+            <button onClick={()=>handleclearCart()} className="flex items-center mt-8 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-300">
+              Clear Cart
+            <MdDeleteOutline className="text-xl" />
+            </button>
+
             </div>
           </div> : ""
       }
