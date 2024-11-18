@@ -5,14 +5,15 @@ import { useSelector } from 'react-redux';
 
 function Product({productData}) {
 
-  console.log(productData)
+  // console.log(productData)
 
   const {discount,img,name,price,quantity,reviews:{count,rating},skinType} = productData
 
   const finalPrice = price - (price * (discount / 100));
 
+
   return (
-    <div className='mt-4 w-fit mb-4'>
+    <div className='mt-4 w-fit mb-4 cursor-pointer'>
       <div className='w-80 border-2 border-gray-200 hover:shadow-2xl p-2 min-h-[640px]'>
         <img src={img} alt="" />
         <h1 className='text-center text-gray-700 text-lg font-semibold'>{name}</h1>
@@ -33,7 +34,7 @@ function Product({productData}) {
         <h1 className='text-2xl text-center mt-2 font-semibold text-gr'>₹{finalPrice}/-</h1>
       </div>
       <div className='flex items-center mt-2 justify-center'>
-         <AddToCartButton />
+         <AddToCartButton productData={productData} />
       </div>
      
     </div>

@@ -6,10 +6,10 @@ function Products() {
 
   const productData = useSelector((state) => state.ProductDataSlice); // Use correct state path
 
-  console.log(productData);
+  // console.log(productData);
 
   return (
-    <div className='flex px-28 justify-between'>
+    <div className='flex px-28 gap-16 items-center justify-center flex-wrap '>
       {
         productData?.data.map((item,index)=>(
           <Product productData={item} />
