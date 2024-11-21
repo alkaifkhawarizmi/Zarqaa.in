@@ -4,7 +4,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { VscAccount } from "react-icons/vsc";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import CartDataSlice from './CartDataSlice';
+import CartDataSlice from '../CartDataSlice';
 
 const navitems = [
   {name:"HOME",path:"/"},
@@ -27,7 +27,9 @@ function Nav() {
 
   const cartData = useSelector((state)=>state.CartDataSlice)
 
-  console.log(cartData.items.length)
+  const data = JSON.parse(localStorage.getItem("cartData"))
+
+  console.log(cartData, data)
 
   return (
     <div className='shadow-2xl z-40 fixed w-screen bg-white'>

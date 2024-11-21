@@ -1,15 +1,12 @@
-import { useDispatch } from 'react-redux';
-import MovingAnimation from './MovingAnimation';
-import Nav from './Nav';
-import Product from './Product';
-import Products from './Products';
-import { addData } from './ProductDataSlice';
-import { useEffect } from 'react';
-import Bottom from './Bottom';
+import Nav from './components/Nav';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Cart from './Cart';
-import Home from './Home';
-import PageNotFound from './PageNotFound';
+import Cart from './components/Cart';
+import Home from './components/Home';
+import PageNotFound from './components/PageNotFound';
+import ProductDetails from './components/ProductDetails';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './CartDataSlice';
 function App() {
 
 
@@ -21,6 +18,7 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/cart' element={<Cart/>} />
       <Route path='*' element={<PageNotFound />}/>
+      <Route path= "/product/:id" element={<ProductDetails />} />
       </Routes>
       <div className='h-screen'></div>
     </div>

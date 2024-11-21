@@ -12,6 +12,7 @@ const ProductDataSlice = createSlice({
       quantity:"30",
       reviews:{rating:4.5,count:100},
       price:300,
+      finalPrice:270,
       discount:10,
     },
   {
@@ -21,6 +22,7 @@ const ProductDataSlice = createSlice({
       quantity:"50",
       reviews:{rating:5,count:175},
       price:350,
+      finalPrice:308,
       discount:12,
   },
 {
@@ -30,6 +32,7 @@ const ProductDataSlice = createSlice({
       quantity:"100",
       reviews:{rating:4.8,count:750},
       price:269,
+      finalPrice:234,
       discount:13,
 },
 {
