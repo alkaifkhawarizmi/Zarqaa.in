@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../CartDataSlice";
 
 const AddToCartButton = (productdata) => {
   const [clicked, setClicked] = useState(false);
-
-  const [cartData , setCartData] = useState(true)
 
   const handleClick = () => {
     setClicked(true);
@@ -16,10 +14,21 @@ const AddToCartButton = (productdata) => {
     }, 800); // Adjust to match animation duration
   };
 
+  const data = useSelector((state) => state.CartDataSlice)
+
+
   const dispatch = useDispatch();
 
   function handleAddToCart() {
-    dispatch(addToCart(productdata));
+    
+    if (data.items.some(item => item.productData.id === productdata.productData.id)) {
+      alert("Already added to cart");
+    } 
+
+    else{
+      dispatch(addToCart(productdata));
+    }
+      
   }
 
   return (

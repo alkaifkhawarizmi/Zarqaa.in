@@ -6,6 +6,7 @@ const ProductDataSlice = createSlice({
   initialState: {
     data:[
       {
+      id:1,
       name:"Zarqaa Vitamin C Glow Serum - Infused with Vitamin C & Hyaluronic Acid for Bright, Hydrated, and Radiant Skin!",
       img:"https://images.mamaearth.in/catalog/product/v/i/vitamin-c-glow-serum_1.jpg?format=auto&width=400&height=400",
       skinType:"Enriched with 50X Vitamin C* | Brightens Skin",
@@ -16,6 +17,7 @@ const ProductDataSlice = createSlice({
       discount:10,
     },
   {
+    id:2,
     name:"Zarqaa SunKissed Glow Serum Brighten and rejuvenate your skin with the power of Vitamin C",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit_c_glow_sunscreen1_white_bg_1.jpg?format=auto&width=400&height=400",
       skinType:"SPF 50 & PA++++ Protection | Adds Natural Glow",
@@ -26,6 +28,7 @@ const ProductDataSlice = createSlice({
       discount:12,
   },
 {
+  id:3,
   name:"Zarqaa Citrus Glow Elixir Packed with Vitamin C and antioxidants for bright, healthy skin",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit-c-face-wash-with-ingredient.jpg?format=auto&width=400&height=400",
       skinType:"Brightens Skin | Evens Skin Tone| Makes Skin Glow",
@@ -36,6 +39,7 @@ const ProductDataSlice = createSlice({
       discount:13,
 },
 {
+  id:4,
   name:"Zarqaa Citrus Glow Elixir Packed with Vitamin C and antioxidants for bright, healthy skin",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit-c-face-wash-with-ingredient.jpg?format=auto&width=400&height=400",
       skinType:"Brightens Skin | Evens Skin Tone| Makes Skin Glow",
@@ -45,6 +49,7 @@ const ProductDataSlice = createSlice({
       discount:13,
 },
 {
+  id:5,
   name:"Zarqaa Citrus Glow Elixir Packed with Vitamin C and antioxidants for bright, healthy skin",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit-c-face-wash-with-ingredient.jpg?format=auto&width=400&height=400",
       skinType:"Brightens Skin | Evens Skin Tone| Makes Skin Glow",
@@ -54,6 +59,7 @@ const ProductDataSlice = createSlice({
       discount:13,
 },
 {
+  id:6,
   name:"Zarqaa Citrus Glow Elixir Packed with Vitamin C and antioxidants for bright, healthy skin",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit-c-face-wash-with-ingredient.jpg?format=auto&width=400&height=400",
       skinType:"Brightens Skin | Evens Skin Tone| Makes Skin Glow",
@@ -63,6 +69,7 @@ const ProductDataSlice = createSlice({
       discount:13,
 },
 {
+  id:7,
   name:"Zarqaa Citrus Glow Elixir Packed with Vitamin C and antioxidants for bright, healthy skin",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit-c-face-wash-with-ingredient.jpg?format=auto&width=400&height=400",
       skinType:"Brightens Skin | Evens Skin Tone| Makes Skin Glow",
@@ -72,6 +79,7 @@ const ProductDataSlice = createSlice({
       discount:13,
 }
 ,{
+  id:8,
   name:"Zarqaa Citrus Glow Elixir Packed with Vitamin C and antioxidants for bright, healthy skin",
       img:"https://images.mamaearth.in/catalog/product/v/i/vit-c-face-wash-with-ingredient.jpg?format=auto&width=400&height=400",
       skinType:"Brightens Skin | Evens Skin Tone| Makes Skin Glow",
